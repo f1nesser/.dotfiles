@@ -12,6 +12,8 @@ set showcmd
 set spell
 set autoindent
 set termguicolors
+set ignorecase
+set smartcase
 autocmd InsertEnter,InsertLeave * set cul!
 
 " markdown tab sizes (there must be a better way)
@@ -32,6 +34,8 @@ Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 " themes plugins
 Plugin 'AhmedAbdulrahman/vim-aylin'
 
