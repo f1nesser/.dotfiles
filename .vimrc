@@ -31,7 +31,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'vim-airline/vim-airline'
 " themes plugins
 Plugin 'AhmedAbdulrahman/vim-aylin'
 
