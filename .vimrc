@@ -31,6 +31,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
