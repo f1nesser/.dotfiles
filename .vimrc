@@ -14,6 +14,7 @@ set autoindent
 set termguicolors
 set ignorecase
 set smartcase
+set spellcapcheck=
 autocmd InsertEnter,InsertLeave * set cul!
 
 " markdown tab sizes (there must be a better way)
@@ -36,7 +37,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-" themes plugins
+" remember to apt-get install silversearcher-ag
+" colorscheme plugins
 Plugin 'AhmedAbdulrahman/vim-aylin'
 
 " All of your Plugins must be added before the following line
