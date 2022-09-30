@@ -15,6 +15,7 @@ set termguicolors
 set ignorecase
 set smartcase
 set spellcapcheck=
+set cc=80
 autocmd InsertEnter,InsertLeave * set cul!
 
 " markdown tab sizes (there must be a better way)
@@ -35,6 +36,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'junegunn/limelight.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/fzf'
@@ -42,6 +44,7 @@ Plugin 'junegunn/fzf.vim'
 " remember to apt-get install silversearcher-ag
 " colorscheme plugins
 Plugin 'AhmedAbdulrahman/vim-aylin'
+Plugin 'catppuccin/vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,3 +59,13 @@ colorscheme aylin
 " spellcheck highlight style
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
