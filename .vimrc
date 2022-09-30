@@ -36,6 +36,7 @@ Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 " remember to apt-get install silversearcher-ag
@@ -47,9 +48,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " NERDTree
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
