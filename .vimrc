@@ -38,7 +38,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/limelight.vim'
 Plugin 'vim-airline/vim-airline'
-Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 " remember to apt-get install silversearcher-ag

@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "aylin"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 vim.opt.shell = "bin/sh"
@@ -162,6 +162,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   { "folke/tokyonight.nvim" },
+  { "AhmedAbdulrahman/vim-aylin" },
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
   { "junegunn/limelight.vim" },
@@ -187,22 +188,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   callback = function() require('user.metals').config() end,
 })
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
-
 vim.opt.relativenumber = true
 vim.opt.cc = "80"
 vim.opt.hlsearch = false
+vim.opt.conceallevel = 2
 
-require 'lspconfig'.marksman.setup {}
