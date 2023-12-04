@@ -1,70 +1,59 @@
-set nocompatible 
+set nocompatible
 filetype on
 filetype plugin on
 filetype indent on
 syntax on
 
-" preference
+set path+=**
+set tags=./tags,tags;
+set wildmenu
+ab vsf vert sf
+ab csf scope find
+
 set number
 set rnu
 set incsearch
 set showcmd
-set spell
+
 set autoindent
-set termguicolors
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set linebreak
+
 set ignorecase
 set smartcase
-set spellcapcheck=
-set cc=80
-autocmd InsertEnter,InsertLeave * set cul!
 
-" markdown tab sizes (there must be a better way)
-autocmd BufNewfile,BufRead *.md set shiftwidth=2
-autocmd BufNewfile,BufRead *.md set tabstop=2
+set statusline=0x%B
+set statusline+=\ %c
+set statusline+=%=%F
+set laststatus=2
 
-" fuzzy file search
-set path+=**
-set wildmenu
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
+set splitbelow
+set splitright
 
-" vundle stuff
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+au BufNewfile,BufRead *.md set shiftwidth=2
+au BufNewfile,BufRead *.md set tabstop=2
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'yuttie/comfortable-motion.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/limelight.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-" remember to apt-get install silversearcher-ag
-" colorscheme plugins
-Plugin 'AhmedAbdulrahman/vim-aylin'
-Plugin 'catppuccin/vim'
+au VimEnter,colorscheme * hi StatusLine ctermbg=white ctermfg=135
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+colorscheme evening
+if exists('&termguicolors')
+    set termguicolors
+else
+    colorscheme slate
+endif
 
-" NERDTree
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-colorscheme aylin
-
-" spellcheck highlight style
-hi clear SpellBad
-hi SpellBad cterm=underline ctermfg=red
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+if !empty(glob("~/.vim/bundle/Vundle.vim"))
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-repeat'
+    call vundle#end()
+    filetype plugin indent on
+endif
