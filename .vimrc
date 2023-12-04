@@ -24,9 +24,9 @@ set linebreak
 set ignorecase
 set smartcase
 
-set statusline=0x%B
+set statusline=\ 0x%B
 set statusline+=\ %c
-set statusline+=%=%F
+set statusline+=%=%F\ 
 set laststatus=2
 
 nnoremap <C-J> <C-W><C-J>
